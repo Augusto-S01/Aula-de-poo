@@ -3,23 +3,23 @@ package br.com.ifsp.augusto.listaDeExercicio1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Exercicio1 {
+public class Exercicio2 {
 
 	public static void main(String[] args) {
 		/**
-		 *	1. Escreva um programa que leia um número inteiro fornecido pelo usuário, 
-		 *	armazenando-o numa variável apropriada.Imprima o valor lido. 
+		 *	2. Escreva um programa que leia um número real fornecido pelo usuário, armazenando-o numa variável apropriada.
+			Imprima o valor lido.
 		 *
 		 */
 		Boolean valorValido;
-		Long valor = null;
+		Float valor = null;
 		do {
-			System.out.println("Digite um numero inteiro");
+			System.out.println("Digite um numero real");
 			Scanner s = new Scanner(System.in);
 			valorValido = true;
 			
 			try {
-				valor = s.nextLong();
+				valor = s.nextFloat();
 				
 			} catch (InputMismatchException e) {
 				System.out.println("Digite um valor valido");

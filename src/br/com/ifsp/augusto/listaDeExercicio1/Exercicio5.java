@@ -3,23 +3,22 @@ package br.com.ifsp.augusto.listaDeExercicio1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Exercicio1 {
+public class Exercicio5 {
 
 	public static void main(String[] args) {
 		/**
-		 *	1. Escreva um programa que leia um número inteiro fornecido pelo usuário, 
-		 *	armazenando-o numa variável apropriada.Imprima o valor lido. 
+		5. Dado um número inteiro qualquer, fornecido pelo usuário, descobrir se o mesmo é par ou ímpar.
 		 *
 		 */
 		Boolean valorValido;
-		Long valor = null;
+		Float valor = null;
 		do {
-			System.out.println("Digite um numero inteiro");
+			System.out.println("Digite um numero qualquer");
 			Scanner s = new Scanner(System.in);
 			valorValido = true;
 			
 			try {
-				valor = s.nextLong();
+				valor = s.nextFloat();
 				
 			} catch (InputMismatchException e) {
 				System.out.println("Digite um valor valido");
@@ -31,8 +30,8 @@ public class Exercicio1 {
 			
 		} while (!valorValido);
 		
-		System.out.println("O valor inserido é " + valor.toString());
-		
+		if(valor % 2 == 0) System.out.println("o valor [" + valor + "] é par");
+		else System.out.println("o valor [" + valor + "] é impar");
 	}
 
 }
