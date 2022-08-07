@@ -8,10 +8,10 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Exercicio8 {
+public class Exercicio10 {
 
 	public static void main(String[] args) {
-//		8. Leia três números inteiros fornecidos pelo usuário. Descubra qual deles é o maior de todos, imprimindo seu valor.
+//		10. Leia três números quaisquer, imprimindo-os em ordem crescente.
 		Boolean valorValido = false;
 		List<Float> valores = null;
 		do {
@@ -36,10 +36,12 @@ public class Exercicio8 {
 			}
 			
 		} while (!valorValido);
-		List resultado = valores.stream().sorted().
+		List<Float> resultado = valores.stream().sorted().
                 collect(Collectors.toList());
 		
-		System.out.println(resultado.get(resultado.size()-1));
+		resultado.forEach(numero -> {
+			System.out.println(numero);
+		});
 		
 	}
 
