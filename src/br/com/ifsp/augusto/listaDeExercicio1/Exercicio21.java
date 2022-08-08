@@ -9,24 +9,32 @@ public class Exercicio21 {
 
 	public static void main(String[] args) {
 		
-//		20.Escreva um programa que leia um valor real correspondente a uma medida em metros, convertendo o valor dado em pés
-//		(1 metro = 3.315 pés), exibindo os valores dado e convertido. Caso o usuário forneça um valor negativo, deve ser exibida
-//		uma mensagem e a operação de conversão não deve ser efetuada.
+//		21. Faça um algoritmo que, lendo 3 números correspondentes aos coeficientes a, b, e c de uma equação do 2º grau, calcule
+//		seu DELTA e também as raízes desta equação, imprimindo seus valores.
 		
 		Boolean valorValido = false;
-		Float valorMetros = null;
-		Float valorPes = null;
-		System.out.println("Converte metros em pés");
+		Float valorA = null;
+		Float valorB = null;
+		Float valorC = null;
+		Double valorDelta = null;
+		Double primeiraRaiz = null;
+		Double segundaRaiz = null;
+		
+		
+		System.out.println("Calculadora Equação de 2º Grau");
 		do {
 			try {
-				System.out.println("Digite um valor em metros");
+				System.out.println("Digite um valor para o A");
 				Scanner s = new Scanner(System.in);
-				valorMetros = s.nextFloat();
+				valorA = s.nextFloat();
 				
-				if(valorMetros < 0) {
-					System.out.println("Você inseriu um numero negativo, a operação não sera realizada ");
-					System.exit(0);
-				}
+				System.out.println("Digite um valor para o B");
+				valorB = s.nextFloat();
+				
+				System.out.println("Digite um valor para o C");
+				valorC = s.nextFloat();
+				
+
 					
 				valorValido = true;
 				
@@ -40,10 +48,22 @@ public class Exercicio21 {
 			
 		} while (!valorValido);
 		
-		valorPes = valorMetros * 3.115F;
-		System.out.println(valorMetros + " Metros equivalem á " + valorPes + " pés");
+		
+		valorDelta = (Math.pow(valorB, 2))-(4*valorA*valorC);
+		if(valorDelta <= 0) {
+			System.out.println("Delta negativo ou nulo , não é possivel calcular");
+		}else {
+			System.out.println("O valor do Delta é: " + valorDelta);
+		}
+
+		
+		primeiraRaiz = (-valorB + Math.sqrt(valorDelta))/(2*valorA);
+		segundaRaiz = (-valorB - Math.sqrt(valorDelta))/(2*valorA);
 		
 		
+		System.out.println("O valor da primeira raiz é: " + primeiraRaiz);
+		System.out.println("O valor da segunda raiz é " + segundaRaiz);
 	}
+	
 
 }
