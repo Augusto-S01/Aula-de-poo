@@ -12,9 +12,8 @@ public class Exercicio18 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//	17 Escreva um programa que leia um valor inteiro correspondente a uma quantidade de segundos, convertendo o valor dado
-//	em horas corridas sabendo que 3600 segundos equivalem a 1 hora, exibindo os valores dado e convertido. Caso o
-//	usuário forneça um valor negativo, deve ser exibida uma mensagem e a operação de conversão não deve ser efetuada.
+//	18.Escreva um programa que leia um número inteiro entre 0 e 100 e o exiba por extenso, por exemplos: 16 -> "dezesseis",
+//		34 -> "trinta e quatro", etc..
 
 		
 		

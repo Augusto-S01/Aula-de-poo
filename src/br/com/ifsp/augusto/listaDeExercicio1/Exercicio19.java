@@ -12,9 +12,8 @@ public class Exercicio19 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//	17 Escreva um programa que leia um valor inteiro correspondente a uma quantidade de segundos, convertendo o valor dado
-//	em horas corridas sabendo que 3600 segundos equivalem a 1 hora, exibindo os valores dado e convertido. Caso o
-//	usuário forneça um valor negativo, deve ser exibida uma mensagem e a operação de conversão não deve ser efetuada.
+//		19. Escreva um programa que leia um número real entre 0.00 e 100.00 e o exiba por extenso como se fosse uma quantia em
+//		dinheiro, por exemplo: 1.00 -> "um real", .12.73 -> "doze reais e setenta e três centavos".
 
 		List<String> unidades = new ArrayList<>(Arrays.asList(
 				"Zero",
@@ -161,7 +160,7 @@ public class Exercicio19 {
 					valorExtenso += unidades.get(centavosInt) + " centavo";
 				}else {
 					
-					valorExtenso += " e  " + unidades.get(centavosInt) + "  centavo(s)";
+					valorExtenso += " e  " + unidades.get(centavosInt) + "  centavos";
 				}
 			}
 			
