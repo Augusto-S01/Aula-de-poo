@@ -7,39 +7,69 @@ public class Exercicio4 {
 
 	public static void main(String[] args) {
 		/**
-		import java.util.Scanner;
-		
-		public class Distancia {
- 		public static void main(String[] args) {
- 				
- 			Scanner teclado = new Scanner(System.in);
- 			double x1, y1, x2, y2, distancia;
-
-			 System.out.println("Entre com as coordenadas x e y dos pontos nesta ordem:");
-			 x1 = teclado.nextFloat();
-			 y1 = teclado.nextFloat();
-			 x2 = teclado.nextFloat();
-			 y2 = teclado.nextFloat();
-			
-			 distancia = Math.pow(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2), 1/2);
-			 System.out.println("A distância é: " + distancia);
- 			}
-		}
+		4. Para	 cada	 produto	 informado	 (nome,	 preço	 e	 quantidade),	 escreva	 o	 nome	 do	 produto	
+		comprado	 e	 o	 valor	 total	 a	 ser	 pago,	 considerando	 que	 são	 oferecidos	 descontos	 pelo	
+		número	de	unidades	compradas,	segundo	a	tabela	abaixo:	
+			a. Até	10	unidades: valor	total
+			b. de	11 a	20	unidades: 10%	de	desconto
+			c. de	21	a	50	unidades: 20%	de	desconto
+			d. acima	de	50	unidades: 25%	de	desconto
 		 */
-		
-		
-		Scanner teclado = new Scanner(System.in);
-		double x1, y1, x2, y2, distancia;
 
-		 System.out.println("Entre com as coordenadas x e y dos pontos nesta ordem:");
-		 x1 = teclado.nextFloat();
-		 y1 = teclado.nextFloat();
-		 x2 = teclado.nextFloat();
-		 y2 = teclado.nextFloat();
-		 //o problema esta no fato de quando ele faz a operação 1/2 ele faz um cast para int
-		 //perdendo a casa decimal
-		 distancia = Math.pow(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2), 0.5);
-		 System.out.println("A distância é: " + distancia);
+		String nome = null;
+		Float preco = null;
+		Long quantidade = null;
+		Float total = null;
+		Float desconto = null;
+		
+		System.out.println("Calculadora de desconto");
+		do {
+			Scanner s = new Scanner(System.in);			
+			try {
+				System.out.println("Digite o nome do produto");
+				nome = s.next();
+				
+				System.out.println("Digite o preço do " + nome);
+				preco = s.nextFloat();
+				
+				System.out.println("Digite a quantidade de " + nome + " comprados(as)");
+				quantidade = s.nextLong();
+				
+				
+				if(quantidade>50) {
+					desconto = 0.25F;
+				}else if( quantidade >= 21 && quantidade <= 50) {
+					desconto = 0.20f;
+				}else if(quantidade >= 11 && quantidade <= 20) {
+					desconto = 0.10f;
+				}else {
+					desconto = 0f;
+				}
+				
+				
+				if(desconto == 0f) {
+					total = quantidade*preco;
+				}else {
+					total = preco*quantidade;
+				}
+				System.out.println(nome + " x" + quantidade + " + R$" + preco + " = R$ " + total);
+				
+				
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				
+				System.out.println("Proximo produto");
+				
+				
+			}catch(Exception e){
+				System.out.println("Erro interno");
+				System.exit(0);
+			}
+			
+		} while (true);
+		
+		
 		
 	}
 
